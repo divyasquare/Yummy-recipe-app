@@ -55,7 +55,13 @@ This API will give you ingredient list for a perticular recipe
 # Project Structure
 
 
+![priject-structure](https://user-images.githubusercontent.com/5101055/160420479-1c50326e-3a25-4f49-8134-c14b58a61e26.png)
 
+
+
+# Swagger open-api docs
+
+![api-docs](https://user-images.githubusercontent.com/5101055/160420736-8cc38406-ee50-4e4a-8c92-43305aea9b29.png)
 
 
 
