@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+<title>Recipe App</title>
+</head>
+<body>
+	 <nav th:replace="recipes/header :: header"></nav>
+
+	<!-- ++++++++++++++++++++ -->
+
+	<div class="container">
+
+		<h2 class="navbar-brand">Recipe Details</h2>
+
+		
+		
+		<div th:if="${recipe.recipeId == 0}">
+            <div class="alert alert-danger" role="alert" th:text="'Recipe with Id[' + ${id} + '] not found'">
+                Recipe not found
+            </div>
+            <a href="list" class="btn btn-outline-secondary">Go Back</a>
+        </div>
+		
+		
+		
+
+		<div th:if="${recipe.recipeId != null}">
+			<div class="mb-3">
+				<label for="recipeName" class="form-label">Recipe Name:</label> <input
+					type="text" class="form-control" id="recipeName" disabled="true"
+					th:value="${recipe.recipeName}"/>
+			</div>
+			
+			
+			
+			
+			
+			<div class="mb-3">
+				
+			
+			<table class="center" >
+  <thead>
+    <tr><th >Ingredient List:</th></tr>
+  </thead>
+  <tbody>
+    <tr th:each="item: ${items}">
+      <td th:text="${item.name}"></td>  
+    </tr>   
+  </tbody>
+</table>
+			
+	</div>
+			
+			
+			
+			
+			
+			<div class="mb-3">
+				<label for="recipeType" class="form-label">Recipe Type:</label> <input
+					type="text" class="form-control" id="recipeType" disabled="true"
+					th:value="${recipe.recipeType}"/>
+			</div>
+			<div class="mb-3">
+				<label for="recipeName" class="form-label">Serving For:</label> <input
+					type="text" class="form-control" id="servingFor" disabled="true"
+					th:value="${recipe.servingFor}"/>
+			</div>
+			<div class="mb-3">
+				<label for="recipeName" class="form-label">Cooking
+					Instruction:</label> 
+					
+					
+					<textarea class="form-control" id="cookingInstruction" rows="8" cols="50"
+                              name="cookingInstruction" disabled="true"
+                              placeholder="Description" th:field="${recipe.cookingInstruction}"
+                              required="required"></textarea>
+					
+					
+					
+			</div>
+			<a class="btn btn-outline-secondary" href="list" role="button">Go
+				back</a>
+
+
+		</div>
+	</div>
+</body>
+</html>
