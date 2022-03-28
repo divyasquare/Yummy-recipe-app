@@ -21,8 +21,8 @@ Run the project through the IDE and head out to http://localhost:8080/recipes/
 Provide you login page .
 Please fill these details.
 
-* User name - welcome2022
-* password - welcome
+* User name - divya
+* password - welcome@123
 
 # Api Explanation
 
